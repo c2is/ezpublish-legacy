@@ -380,7 +380,7 @@
 
             // eZ: make sure we are pasting as plain text inside literal tag
             ed.onNodeChange.add(function (ed, cm, e) {
-                if ( e.tagName.toLowerCase() === 'pre' || e.parentNode.tagName.toLowerCase() === 'pre' ) {
+                if ( e.tagName && (e.tagName.toLowerCase() === 'pre' || e.parentNode.tagName.toLowerCase() === 'pre') ) {
                     ed.pasteAsPlainText = true;
                 } else {
                     ed.pasteAsPlainText = false;
